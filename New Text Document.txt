@@ -1,0 +1,9 @@
+Sequence :
+
+1. Introduction to the infrastructure - 15 min
+2. Checking server
+3. Doing set up of nodes 
+4. Doing test connection to server - hello world 
+5. Use Case 1 : Remote FHIRification of Rad Data
+6. Use Case 2 : Deducing fhir structure
+7. Use Case 3 : Patient Cohort Counter and Statistics

@@ -1,0 +1,30 @@
+---
+- hosts: ppdli
+  become: true
+  become_method: sudo
+  tasks:
+  - name:    Install prerequisites
+    apt:     name={{item}} update_cache=yes
+    with_items:
+     - git
+     - python3-venv
+     - python3-pip
+     - python3-dev
+     - postgresql
+     - gcc
+     - libpq-dev
+  - name: Install ppDLI package
+    pip:
+      name: ppdli
+  - name: create config folder
+    file:
+      path: /etc/xdg/pytaskmanager
+      owner: ppdli
+  - name: create content folder
+    file:
+      path: /usr/local/share/pytaskmanager
+      owner: ppdli
+- name: Start Node
+    command: 
+     - ppnode new 
+     - ppnode start 

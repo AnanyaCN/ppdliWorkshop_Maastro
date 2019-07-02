@@ -1,0 +1,15 @@
+version: '3'
+services: 
+    ppnode:
+        build: .
+        ports:
+            - "5004:5004"   
+        volumes: 
+            - ./Data:/code/
+        stdin_open: true
+        tty: true 
+       
+networks:
+  default:
+    driver: bridge
+        
